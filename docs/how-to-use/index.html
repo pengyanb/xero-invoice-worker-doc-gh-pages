@@ -1,0 +1,78 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>How to use · Xero Invoice Worker</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## npm commands"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="How to use · Xero Invoice Worker"/><meta property="og:type" content="website"/><meta property="og:url" content="https://pengyanb.github.io/xero-invoice-worker-doc-gh-pagesindex"/><meta property="og:description" content="## npm commands"/><meta property="og:image" content="https://pengyanb.github.io/xero-invoice-worker-doc-gh-pages/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://pengyanb.github.io/xero-invoice-worker-doc-gh-pages/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/xero-invoice-worker-doc-gh-pagesimg/Xero_software_logo.svg"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/xero-invoice-worker-doc-gh-pagesjs/scrollSpy.js"></script><link rel="stylesheet" href="/xero-invoice-worker-doc-gh-pagescss/main.css"/><script src="/xero-invoice-worker-doc-gh-pagesjs/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/xero-invoice-worker-doc-gh-pages"><img class="logo" src="/xero-invoice-worker-doc-gh-pagesimg/Xero_software_logo.svg" alt="Xero Invoice Worker"/><h2 class="headerTitleWithLogo">Xero Invoice Worker</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/xero-invoice-worker-doc-gh-pagesdocs/overview" target="_self">Docs</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Basic</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Basic</h3><ul class=""><li class="navListItem"><a class="navItem" href="/xero-invoice-worker-doc-gh-pagesdocs/overview">Overview</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/xero-invoice-worker-doc-gh-pagesdocs/how-to-use">How to use</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">CICD</h3><ul class=""><li class="navListItem"><a class="navItem" href="/xero-invoice-worker-doc-gh-pagesdocs/build-pipeline">Build Pipeline</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Documents</h3><ul class=""><li class="navListItem"><a class="navItem" href="/xero-invoice-worker-doc-gh-pagesdocs/how-to-doc">How to doc</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Improvements</h3><ul class=""><li class="navListItem"><a class="navItem" href="/xero-invoice-worker-doc-gh-pagesdocs/to-dos">Improvements</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">How to use</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="npm-commands"></a><a href="#npm-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>npm commands</h2>
+<ul>
+<li><strong>npm start</strong>, start the invoice work server</li>
+<li><strong>npm run start:dev</strong>, run dev server with the source code</li>
+<li><strong>npm run build</strong>, build the server and output the files to <strong>dist</strong> folder</li>
+<li><strong>clean</strong>, remove the <strong>dist</strong> folder</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="server-options"></a><a href="#server-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Server Options</h2>
+<ul>
+<li><strong>feed-url</strong>, sepecifies the endpoint url to retrieve that invoices events data. Default value: <a href="http://localhost:9001/invoices/events">http://localhost:9001/invoices/events</a>. Override by calling &quot;<strong>npm start -- --feed-url=<a href="http://test.com/">http://test.com/</a></strong>&quot;.</li>
+<li><strong>invoice-dir</strong>, folder path to save the generated PDF files. Default value: <strong>./invoiceDir</strong>. Override by calling &quot;<strong>npm start -- --invoice-dir=./invoices</strong>&quot;.</li>
+<li><strong>port</strong>, server port number. Default value: <strong>9000</strong>. Override by calling <strong>npm start -- --port=8080</strong></li>
+<li><strong>useLocalMockServer</strong>, a flag indicates if a local mock invoices server need to be started for feeding the invoices events. Default value: <strong>true</strong></li>
+<li><strong>mockServerPort</strong>, mock server port number. Default value: <strong>9001</strong></li>
+<li><strong>fetchFrequence</strong>, cron time string. Default to 10 seconds: 10 * * * * *</li>
+<li><strong>pageSize</strong>, page size used when fetching the events. Default value: 10.</li>
+<li><strong>afterEventId</strong>, initial event id to start fetching from. Default value: 0.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="default-local-mock-server"></a><a href="#default-local-mock-server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Default Local Mock Server</h2>
+<p>A mock server for feeding the stub invoices events and can be used for local development.</p>
+<p>Endpoint url: <a href="http://localhost:9001/invoices/events?pageSize=10&amp;afterEventId=0">http://localhost:9001/invoices/events?pageSize=10&amp;afterEventId=0</a></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/xero-invoice-worker-doc-gh-pagesdocs/overview"><span class="arrow-prev">← </span><span>Overview</span></a><a class="docs-next button" href="/xero-invoice-worker-doc-gh-pagesdocs/build-pipeline"><span>Build Pipeline</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#npm-commands">npm commands</a></li><li><a href="#server-options">Server Options</a></li><li><a href="#default-local-mock-server">Default Local Mock Server</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/xero-invoice-worker-doc-gh-pages" class="nav-home"><img src="/xero-invoice-worker-doc-gh-pagesimg/Xero_software_logo.svg" alt="Xero Invoice Worker" width="66" height="58"/></a></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/xero-invoice-worker-doc-gh-pagesimg/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Peng Yanbing</section></footer></div><script src="http://localhost:undefined/livereload.js"></script></body></html>
